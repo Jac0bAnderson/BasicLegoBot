@@ -25,6 +25,9 @@ public void start()
 	sillyBot.driveRoom();
 	
 }
+
+
+
 public String getMessage() 
 {
 	return message;
@@ -56,6 +59,12 @@ public void setyPosition(int yPosition)
 public void setWaitTime(long waitTime) 
 {
 	this.waitTime = waitTime;
+}
+
+
+public EV3Bot getEV3() {
+	
+	return sillyBot;
 }
 
 }

@@ -21,6 +21,7 @@ public class EV3Bot
 	private MovePilot botPilot;
 	private EV3TouchSensor backTouch;
 	private  EV3UltrasonicSensor distanceSensor;
+	private TwitterRobot tweetSend;
 	
 	
 	public EV3Bot()
@@ -33,6 +34,7 @@ public class EV3Bot
 		
 		distanceSensor = new EV3UltrasonicSensor(LocalEV3.get().getPort("S1"));
 		backTouch = new EV3TouchSensor(LocalEV3.get().getPort("S2"));
+		
 		
 		setupPilot();
 		displayMessage();
@@ -65,25 +67,29 @@ public void driveRoom()
 	distanceSensor.fetchSample(ultrasonicSamples, 0);
 	//short side drive
 	shortDrive();
-	//if(ultrasonicSamples[0] < 2.5) 
-	//{
-		
-	//}
-	//else
-	//{
-		
-	//}
-	displayMessage("driveRoom");
+	if(ultrasonicSamples[0] < 30) 
+	{
+		shortDrive();
+		displayMessage("driveRoom");
+	
+	}
+	else
+	{
+		longDrive();
+		displayMessage("driveRoom");
+		botPilot.travel(0);
+	}
+	
 }
 private void shortDrive()
 {
-
 	LCD.drawString("Short", xPosition, yPosition);
 	botPilot.travel(760.2);
+	tweetSend.sendTweet("Internet Me-Maws");
 	botPilot.rotate(65);
-	botPilot.travel(3300.2);
+	botPilot.travel(3320.2);
 	botPilot.rotate(-65);
-	botPilot.travel(5565.8);
+	botPilot.travel(5400.8);
 	botPilot.rotate(65);
 	botPilot.travel(3350.2);
 }
@@ -92,11 +98,16 @@ private void longDrive()
 	LCD.drawString("long", xPosition, yPosition);
 	botPilot.travel(3350.2);
 	botPilot.rotate(-65);
-	botPilot.travel(5565.8);
+	botPilot.travel(5500.8);
 	botPilot.rotate(65);
-	botPilot.travel(3300.2);
+	botPilot.travel(3320.2);
 	botPilot.rotate(-65);
 	botPilot.travel(760);
+}
+
+public MovePilot getPilot()
+{
+	return botPilot;
 }
 
 }
