@@ -82,17 +82,57 @@ public void driveRoom()
 
 public void robotSing()
 {
+
 	
 	Sound.playTone(1567, 1000);//G
-	Sound.playTone(1396.91, 1000);//F
 	Sound.playTone(1396, 1000);//F
-	Sound.playTone(1318.51,1000);//E
-	Sound.playTone(1244.51,1000);//D#
-	Sound.playTone(1174.66,1000);//D
-	Sound.playTone(932.33, 500);//A#
-	Sound.playTone(932.33, 500);//A#
-	Sound.playTone(1046.50, 1000);//C
-	Sound.playTone(523.25,1000);//C
+	Sound.playTone(1396, 1000);//F
+	Sound.playTone(1318,1000);//E
+	Sound.playTone(1244,1000);//D#
+	Sound.playTone(1174,1000);//D
+	Sound.playTone(932, 500);//A#
+	Sound.playTone(932, 500);//A#
+	Sound.playTone(1046, 1000);//C
+	Sound.playTone(523,1000);//C
+/**
+ * Sound.playTone(739, 1000);//G
+	Sound.playTone(698, 1000);//F
+	Sound.playTone(698, 1000);//F
+	Sound.playTone(659,1000);//E
+	Sound.playTone(622,1000);//D#
+	Sound.playTone(587,1000);//D
+	Sound.playTone(466, 1000);//A#
+	Sound.playTone(466, 1000);//A#
+	Sound.playTone(523, 1000);//C
+	Sound.playTone(261,1000);//C
+
+ */
+	
+}
+public void robotSingT()
+{
+	Sound.playTone(784, 1000);
+	Sound.playTone(698, 1000);
+	Sound.playTone(587, 1000);
+	Sound.playTone(622, 1000);
+	Sound.playTone(523, 1000);
+	Sound.playTone(466, 1000);
+	Sound.playTone(392, 1000);
+	Sound.playTone(349, 1000);
+	Sound.playTone(293, 1000);
+	Sound.playTone(466, 1000);
+	Sound.playTone(196, 1000);
+	Sound.playTone(246, 1000);
+	Sound.playTone(293, 1000);
+	Sound.playTone(174, 1000);
+	Sound.playTone(196, 1000);
+	Sound.playTone(196, 1000);
+	Sound.playTone(246, 1000);
+	Sound.playTone(293, 1000);
+	Sound.playTone(349, 1000);
+	Sound.playTone(493, 1000);
+	Sound.playTone(261, 1000);
+	
 }
 
 private void shortDrive()
