@@ -137,6 +137,7 @@ public void robotSingT()
 
 private void shortDrive()
 {
+	//beep();
 	LCD.drawString("Short", xPosition, yPosition);
 	botPilot.travel(760.2);
 	//tweetSend.sendTweet("Internet Me-Maws");
@@ -149,6 +150,7 @@ private void shortDrive()
 }
 private void longDrive()
 {
+	//twoBeeps();
 	LCD.drawString("long", xPosition, yPosition);
 	botPilot.travel(3350.2);
 	//tweetSend.sendTweet("Internet Me-Maws");
