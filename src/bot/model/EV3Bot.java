@@ -64,19 +64,26 @@ public void driveRoom()
 {
 	ultrasonicSamples = new float [distanceSensor.sampleSize()];
 	distanceSensor.fetchSample(ultrasonicSamples, 0);
-	robotSing();
-	//if(ultrasonicSamples[0] < 30) 
-	//{
-		//shortDrive();
-		//displayMessage("driveRoom");
+	//robotSing();
+	//robotSingT();  
+	if(ultrasonicSamples[0] < 30) 
+	{
+		Sound.playTone(1567, 500);
+		shortDrive();
+		displayMessage("driveRoom");
+		Sound.playTone(523,50);
 	
-	//}
-	//else
-	//{
-		//longDrive();
-		//displayMessage("driveRoom");
-		//botPilot.travel(0);
-	//}
+	}
+	else
+	{
+		Sound.playTone(1567, 250);
+		Sound.playTone(1567, 250);
+		longDrive();
+		displayMessage("driveRoom");
+		botPilot.travel(0);
+		Sound.playTone(523,250);
+		Sound.playTone(523,250);
+	}
 	
 }
 
