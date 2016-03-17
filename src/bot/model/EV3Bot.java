@@ -69,7 +69,7 @@ public void driveRoom()
 	if(ultrasonicSamples[0] < 30) 
 	{
 		Sound.playTone(1567, 500);
-		shortDrive();
+		shortDrive();//
 		displayMessage("driveRoom");
 		Sound.playTone(523,50);
 	
